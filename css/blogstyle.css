@@ -61,6 +61,13 @@ input, textarea {
     border-radius: 1px solid lightgray;
     font-family: Arial, Helvetica, sans-serif;
 }
- 
+.delete-btn {
+    border: none;
+    background: rgb(255, 82, 82);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+}
     
    

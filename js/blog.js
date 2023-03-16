@@ -10,20 +10,25 @@ function renderPost() {
     html += `
               <h2>${post.title}</h2>
               <p>${post.body}</p>
+              <button class="delete-btn">Delete</button>
               <hr />
           `;
   }
   //grabbing html element
   let blogList = document.getElementById("blog-list");
   blogList.innerHTML = html;
-
-  let saveBlogs = JSON.stringify(blogList);
-  localStorage.setItem("blogs", saveBlogs);
-  console.log(localStorage);
-
-  let parseBlogs = JSON.parse(localStorage.getItem(blogList));
-  console.log(parseBlogs);
 }
+
+//get item from local storage
+let getBlogsFromLocalStorage = JSON.parse(localStorage.getItem("blogs"));
+console.log(getBlogsFromLocalStorage);
+
+//checking if its in local storage
+if (getBlogsFromLocalStorage) {
+  data = getBlogsFromLocalStorage;
+  renderPost();
+}
+
 //requesting from dummy blog from scrimba url
 /* fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
@@ -36,7 +41,7 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
   const postTitle = titleInput.value;
   const postBody = bodyInput.value;
-  const data = {
+  let data = {
     title: postTitle,
     body: postBody,
   };
@@ -48,6 +53,10 @@ form.addEventListener("submit", function (e) {
       "Content-Type": "application/json",
     },
   };
+
+  //local storage
+  localStorage.setItem("blogs", JSON.stringify(data));
+
   //posting to blog
   const url = fetch("https://apis.scrimba.com/jsonplaceholder/posts", options)
     .then((res) => res.json())
