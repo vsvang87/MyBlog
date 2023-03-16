@@ -14,15 +14,23 @@ function renderPost() {
           `;
   }
   //grabbing html element
-  document.getElementById("blog-list").innerHTML = html;
+  let blogList = document.getElementById("blog-list");
+  blogList.innerHTML = html;
+
+  let saveBlogs = JSON.stringify(blogList);
+  localStorage.setItem("blogs", saveBlogs);
+  console.log(localStorage);
+
+  let parseBlogs = JSON.parse(localStorage.getItem(blogList));
+  console.log(parseBlogs);
 }
-//requesting from blog
-fetch("https://apis.scrimba.com/jsonplaceholder/posts")
+//requesting from dummy blog from scrimba url
+/* fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
   .then((data) => {
     postsArray = data.slice(0, 5);
     renderPost();
-  });
+  }); */
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -41,7 +49,7 @@ form.addEventListener("submit", function (e) {
     },
   };
   //posting to blog
-  fetch("https://apis.scrimba.com/jsonplaceholder/posts", options)
+  const url = fetch("https://apis.scrimba.com/jsonplaceholder/posts", options)
     .then((res) => res.json())
     .then((post) => {
       postsArray.unshift(post);
@@ -52,6 +60,8 @@ form.addEventListener("submit", function (e) {
       bodyInput.value = "";
     });
 });
+
+//saving my blogs to local storage
 
 //query strings
 //bikeracks?available=true&brand=Thule&numBikes=4
@@ -64,3 +74,13 @@ fetch(
     console.log(data);
   });
 */
+
+/* let obj = {
+  name: "Visay",
+  age: 35,
+};
+
+let convertObj = JSON.stringify(obj);
+
+localStorage.setItem("Me", convertObj);
+console.log(localStorage); */
