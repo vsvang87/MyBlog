@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!------------------Google Font-------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=EB+Garamond:ital@1&family=Epilogue:wght@300&family=Fredoka&family=Lato:ital,wght@0,400;1,300;1,400&family=Lobster&family=Montserrat:wght@200&family=PT+Sans&family=Poppins:wght@200&family=Quicksand:wght@500&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&family=Spline+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/blogstyle.css" />
+    <title>My Blog</title>
+  </head>
+  <body>
+    <div class="container">
+      <!--navigation-->
+      <nav class="navbar">
+        <h1 class="main-title">Visay's Blogs</h1>
+      </nav>
+      <!--form-->
+      <section>
+        <form id="new-post">
+          <label for="post-title" class="title">Title</label>
+          <input type="text" placeholder="Title..." id="post-title" />
+          <label for="post-body" class="title">Blog</label>
+          <textarea
+            class="textarea"
+            id="post-body"
+            placeholder="Enter text here..."
+          ></textarea>
+
+          <button class="btn" id="submit-btn">Post</button>
+        </form>
+      </section>
+      <!--container-->
+      <div class="blog-container">
+        <div id="blog-list"></div>
+      </div>
+    </div>
+
+    <script src="/js/blog.js"></script>
+  </body>
+</html>

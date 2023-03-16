@@ -1,0 +1,66 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+}
+label {
+    margin: .5rem 0;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(2, 122, 170);
+    height: 50vh;
+}
+.container {
+    width: min(90%, 80rem);
+    margin-inline: auto;
+}
+.navbar {
+    background: rgb(211, 55, 55);
+    height: 5vh;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-title {
+    font-size: 3rem;
+    color: #fff;
+}
+.title {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.textarea {
+    height: 5rem;
+}
+.btn {
+    cursor: pointer;
+    margin-top: 0.7rem;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    background: rgb(0, 78, 114);
+    color: #fff;
+}
+input, textarea {
+    margin: 0.7rem 0;
+    padding: 0.5rem;
+    outline: none;
+    resize: none;
+    border-radius: 1px solid lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ 
+    
+   
